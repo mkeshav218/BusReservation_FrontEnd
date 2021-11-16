@@ -18,7 +18,6 @@ class Header extends React.Component{
                         <li><Link className="nav-link" to="/cancel">Cancel Ticket</Link></li>
                         <li><Link className="nav-link" to="/logout">Logout</Link></li>
                         <li><Link className="nav-link" to="/aboutus">About Us</Link></li>
-                        <li><Link className="nav-link" to="/reserve">Reservation</Link></li>
                     </ul>
                 </nav>
             </header>

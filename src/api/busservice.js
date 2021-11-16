@@ -3,6 +3,8 @@ import axios from "axios";
 class BusService{
     loginService(username,password){
         const loginDto = {userName:username,password:password}
+        console.log("Login dto = ")
+        console.log(loginDto)
         return axios.post('http://localhost:8765/registration-service/login',loginDto);
     }
 
@@ -27,7 +29,9 @@ class BusService{
             toTime:toTime,
             typeOfUser:typeOfUser
         }
-        return axios.post('http://localhost:8587/searchbus',searchBusDto);
+        console.log("Req body = ")
+        console.log(searchBusDto)
+        return axios.post('http://localhost:8765/search-service/searchbus',searchBusDto);
     }
 
     searchTicketDetails(ticketNo,email,password){
@@ -39,7 +43,7 @@ class BusService{
         return axios.post('http://localhost:8765/reservation-service/get-ticket-details',searchTicketDto);
     }
 
-    bookTicket(source,destination,seatNo,doj,busNo,email,password){
+    bookTicket(source,destination,seatNo,doj,busNo,email,password,passengerName,busName){
         const bookTicketDto = {
             source:source,
             destination:destination,
@@ -47,7 +51,9 @@ class BusService{
             doj:doj,
             busNo:busNo,
             email:email,
-            password:password
+            password:password,
+            passengerName:passengerName,
+            busName:busName
         }
         console.log(bookTicketDto)
         return axios.post('http://localhost:8765/reservation-service/add/reservation',bookTicketDto);

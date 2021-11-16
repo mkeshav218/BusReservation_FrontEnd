@@ -3,7 +3,7 @@ import {Button} from 'react-bootstrap';
 import BusService from './api/busservice';
 import AuthenticationService from './authenticationservice';
 
-class SearchBus extends React.Component{
+class SearchBus extends React.Component {
     constructor(){
         super();
         this.state={
@@ -14,8 +14,9 @@ class SearchBus extends React.Component{
             typeOfUser:"unauthorized"
         }
     }
-    searchbus(){
-        if(AuthenticationService.isUserLoggedIn())
+    async searchbus(){
+        console.log(AuthenticationService.isUserLoggedIn())
+        if(await AuthenticationService.isUserLoggedIn())
         {
             this.setState({
                 typeOfUser:"authorized"
@@ -23,13 +24,21 @@ class SearchBus extends React.Component{
         }
         BusService.searchBusService(this.state.src,this.state.dest,this.state.fromTime,this.state.toTime,this.state.typeOfUser)
         .then(response =>{
-            console.log(response)
+            console.log(response.data)
+            let length = true;
+            let data = response.data;
+            this.props.history.push("/searchbuslist",{ length : length,data:data })
         }) 
+        .catch(err =>{
+            let length = false;
+            let data = err.data;
+            this.props.history.push("/searchbuslist",{ length : length,data:data })
+        })
     }
     render(){
         return(
             <div>
-                <h1>Choose Your Destination</h1>
+                <h1 style={{color: "red"}}>Choose Your Destination</h1>
                 Source <select id = "dropdown" onChange={(e)=>this.setState({src:e.target.value})}>
                     <option value=""></option>
                     <option value="Navi Mumbai">Navi Mumbai</option>

@@ -7,7 +7,8 @@ class Cancel extends React.Component{
     constructor(){
         super();
         this.state={
-            ticketNo:null
+            ticketNo:null,
+            resAfterReq:null
         }
     }
 
@@ -16,10 +17,16 @@ class Cancel extends React.Component{
         var pwd = sessionStorage.getItem('authenticatedPassword');
         BusService.cancelTicket(this.state.ticketNo,userName,pwd)
         .then(response=>{
-            console.log(response);
+            console.log(response.data);
+            this.setState({
+                resAfterReq:response.data
+            })
         })
         .catch(response=>{
             console.log(response);
+            this.setState({
+                resAfterReq:"Ticket can't be cancelled...!!"
+            })
         })
     }
 
@@ -28,6 +35,7 @@ class Cancel extends React.Component{
             <div>
                 Ticket No <input type="number" onChange={(e)=>this.setState({ticketNo:e.target.value})}/><br/><br/>
                 <Button onClick={()=>{this.cancel()}}>Cancel Ticket</Button>
+                <h1  style={{color: "Purple"}}>{this.state.resAfterReq}</h1>
             </div>
         )
     }

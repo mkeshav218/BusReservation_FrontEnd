@@ -2,6 +2,9 @@ import { Button } from 'react-bootstrap';
 import React from 'react';
 import AuthenticationService from './authenticationservice';
 import BusService from './api/busservice';
+import './searchTICKET.css'
+//import background from "./img/bus1.jpg";
+
 //import { useHistory } from "react-router-dom";
 //import { useHistory } from 'react-router';
 

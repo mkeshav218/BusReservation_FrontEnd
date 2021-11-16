@@ -1,6 +1,8 @@
 import { Button } from 'react-bootstrap';
 import React from 'react';
 import BusService from './api/busservice';
+import './searchTICKET.css'
+
 class Register extends React.Component{
     constructor(){
         super();
@@ -36,6 +38,7 @@ class Register extends React.Component{
     render(){
         return(
             <div>
+                <div>
                 First Name <input type="text" onChange={(e)=>this.setState({firstName:e.target.value})}/><br/><br/>
                 Last Name <input type="text" onChange={(e)=>this.setState({lastName:e.target.value})}/><br/><br/>
                 Email id <input type="text" onChange={(e)=>this.setState({email:e.target.value})}/><br/><br/>
@@ -44,6 +47,7 @@ class Register extends React.Component{
                 Contact Number <input type="number" onChange={(e)=>this.setState({phone:e.target.value})}/><br/><br/>
                 <Button onClick={()=>{this.register()}}>Sign Up</Button>
                 <h3 style={{color: "Green"}}>{this.state.check}</h3>
+                </div>
             </div>
         )
     }
