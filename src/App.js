@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import Login from './login';
@@ -13,40 +13,60 @@ import LogOut from './logout';
 //import Reservation from './reservation'; 
 import Payment from './payment';
 import SeatSelect from './selectSeat';
-import background from "./img/bus1.jpg";
-//import DeepLink from './deepLink';
+import background from "./img/sky.jpg";
+import {ProSidebar, Menu, MenuItem, SubMenu} from 'react-pro-sidebar';
+import * as FAicons from "react-icons/fa";
+import 'react-pro-sidebar/dist/css/styles.css';
+import { Link } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App" style={{ 
-      backgroundImage:  `url(${background})` ,
+    <div className="App" style={{
+      backgroundImage: `url(${background})`,
       backgroundSize: "cover",
-          height: "100vh",
+      height: "100vh",
     }}>
-    
-          <Router>
-          <Header/>
 
-            <Switch>
-              <Route exact path="/login" component={Login}/>
-              <Route exact path="/search" component={Search}/>
-              <Route exact path="/searchbus" component={SearchBus}/>
-              <Route exact path="/searchbuslist" component={SearchBusList}/>
-              <Route exact path="/cancel" component={Cancel}/>
-              {/* <Route exact path ="/reserve" component={Reservation}/> */}
-              <Route exact path="/register" component={Register}/>
-              <Route exact path="/aboutus" component={AboutUs}/>
-              <Route exact path="/logout" component={LogOut}/>
-              <Route exact path="/payment" component={Payment}/>
-              <Route exact path="/seatselect" component={SeatSelect}/>
-              {/* <Route exact path="/" component={Login}/>
+
+
+      <Router>
+        <Header />
+        {/* <ProSidebar>
+        <Menu iconShape="square">
+          <MenuItem icon={<FAicons.FaGem />}>Dashboard  <Link to="/login" /></MenuItem>
+          <SubMenu title="Components" icon={<FAicons.FaHeart />}>
+            <MenuItem to="/login">Component 1</MenuItem>
+            <MenuItem>Component 2</MenuItem>
+          </SubMenu>
+          <SubMenu title="Components" icon={<FAicons.FaHeart />}>
+            <MenuItem to="/login">Component 1</MenuItem>
+            <MenuItem>Component 2</MenuItem>
+          </SubMenu>
+         
+        </Menu>
+      </ProSidebar>; */}
+      
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/searchbus" component={SearchBus} />
+          <Route exact path="/searchbuslist" component={SearchBusList} />
+          <Route exact path="/cancel" component={Cancel} />
+          {/* <Route exact path ="/reserve" component={Reservation}/> */}
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/aboutus" component={AboutUs} />
+          <Route exact path="/logout" component={LogOut} />
+          <Route exact path="/payment" component={Payment} />
+          <Route exact path="/seatselect" component={SeatSelect} />
+          {/* <Route exact path="/" component={Login}/>
               <Route exact path="/login" component={Login}/>
               <AuthenticatedRoute exact path="/logout" component={LogOut}/>
               <AuthenticatedRoute exact path="/welcome/:name" component={Welcome}/>
               <AuthenticatedRoute path="/todos" component={Todo}/>
               <Route component={WrongUrl}/> */}
-            </Switch>
-            <Footer/>
-          </Router>
+        </Switch>
+        <Footer />
+      </Router>
 
     </div>
   );
