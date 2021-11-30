@@ -38,7 +38,7 @@ class Payment extends React.Component{
     render(){
         return(
             <div>
-                <label className="paymentcss">
+                <label  style={{border:"2px solid",color:"white",fontSize:"20px"}}>
                         Congratulations,Your booking is confirmed!!<br/>
                         Here are the details :- <br/>
                         Passenger-Name :- {this.state.passengerName}<br/>

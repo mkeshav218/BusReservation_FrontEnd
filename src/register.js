@@ -44,15 +44,19 @@ class Register extends React.Component{
     render(){
         return(
             <div>
-                <div>
-                First Name <input type="text" onChange={(e)=>this.setState({firstName:e.target.value})}/><br/><br/>
-                Last Name <input type="text" onChange={(e)=>this.setState({lastName:e.target.value})}/><br/><br/>
-                Email id <input type="text" onChange={(e)=>this.setState({email:e.target.value})}/><br/><br/>
-                Password <input type="password" onChange={(e)=>this.setState({password:e.target.value})}/><br/><br/>
-                Confirm Password <input type="password"/><br/><br/>
-                Contact Number <input type="number" onChange={(e)=>this.setState({phone:e.target.value})}/><br/><br/>
+                <div class="form-group" style={{ backgroundColor: "white",paddingTop:"10px", paddingLeft: "40px",paddingBlockEnd:"10px", paddingRight: "40px", position: "fixed", marginLeft: "35%" }}>
+                <label>First Name</label>
+                <input type="text" placeholder="Enter First Name"  onChange={(e)=>this.setState({firstName:e.target.value})}/><br/><br/>
+                Last Name <input type="text" placeholder="Enter Last Name" onChange={(e)=>this.setState({lastName:e.target.value})}/><br/><br/>
+                Email id <input type="text" placeholder="Enter email-id" onChange={(e)=>this.setState({email:e.target.value})}/><br/><br/>
+                Password <input type="password" placeholder="Enter password" onChange={(e)=>this.setState({password:e.target.value})}/><br/><br/>
+                Confirm Password <input placeholder="Re Enter password" type="password"/><br/><br/>
+                Contact Number <input placeholder="Enter contact no" type="number" onChange={(e)=>this.setState({phone:e.target.value})}/><br/><br/>
                 <Button onClick={()=>{this.register()}}>Sign Up</Button>
-                <h3 style={{color: "Green"}}>{this.state.check}</h3>
+                </div>
+                <div >
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <label style={{color: "gold",fontSize:"40px"}}>{this.state.check}</label>
                 </div>
             </div>
         )

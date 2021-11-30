@@ -18,12 +18,11 @@
 .logincss {
   padding: 10px;
   border: 2px solid;
-  margin: 10px;
   background-color:powderblue;
   text-align: center;
   width: 50%;
-  position: unset;
-  margin-left: 25%;
+  margin-right: 50%;
+  margin-left: 40%;
 }
 
 .registrationcss {
@@ -59,7 +58,7 @@
 }
 
 .App-header {
-  background-color: chartreuse;
+  background-color: gold;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

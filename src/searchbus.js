@@ -38,24 +38,29 @@ class SearchBus extends React.Component {
     render(){
         return(
             <div>
-                <h1 style={{color: "red"}}>Choose Your Destination</h1>
-                Source <select id = "dropdown" onChange={(e)=>this.setState({src:e.target.value})}>
-                    <option value=""></option>
-                    <option value="Navi Mumbai">Navi Mumbai</option>
-                    <option value="Dombivli">Dombivli</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Nashik">Nashik</option>
-                </select><br/><br/>
+                <label style={{color: "white",fontSize:100}}>Choose Your Destination</label><br/><br/>
+                    
+                <label  style={{color: "white",fontSize:30}}>Source </label> 
+                    <select id = "dropdown" onChange={(e)=>this.setState({src:e.target.value})} style={{fontSize:15}} >
+                        <option value=""></option>
+                        <option value="Navi Mumbai">Navi Mumbai</option>
+                        <option value="Dombivli">Dombivli</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Nashik">Nashik</option>
+                    </select><br/><br/>
                 
-                Destination <select id = "dropdown" onChange={(e)=>this.setState({dest:e.target.value})}>
-                    <option value=""></option>
-                    <option value="Navi Mumbai">Navi Mumbai</option>
-                    <option value="Dombivli">Dombivli</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Nashik">Nashik</option>
-                </select><br/><br/>From Time<input type="time" onChange={(e)=>{this.setState({fromTime:e.target.value})}}/>
-                To Time<input type="time" onChange={(e)=>{this.setState({toTime:e.target.value})}}/><br/><br/>
-                <Button onClick={()=>{this.searchbus()}}>Search</Button>
+                <label style={{color: "white",fontSize:30}}>Destination</label>
+                    <select id = "dropdown" onChange={(e)=>this.setState({dest:e.target.value})}>
+                        <option value=""></option>
+                        <option value="Navi Mumbai">Navi Mumbai</option>
+                        <option value="Dombivli">Dombivli</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Nashik">Nashik</option>
+                    </select><br/><br/>
+                <label style={{color: "white",fontSize:30}}>From Time</label>
+                <input type="time" onChange={(e)=>{this.setState({fromTime:e.target.value})}}/>
+                <label style={{color: "white",fontSize:30}}>To Time</label><input type="time" onChange={(e)=>{this.setState({toTime:e.target.value})}}/><br/><br/>
+                <Button onClick={()=>{this.searchbus()}} style={{fontSize:20}}>Search Bus</Button>
             </div>
 
         )

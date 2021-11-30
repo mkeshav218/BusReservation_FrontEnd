@@ -33,10 +33,17 @@ class Cancel extends React.Component{
     render(){
         return(
             <div>
-                Ticket No <input type="number" onChange={(e)=>this.setState({ticketNo:e.target.value})}/><br/><br/>
+                <div class="form-group" style={{backgroundColor:"white",paddingLeft:"40px",paddingRight:"40px",paddingBlockEnd:"10px", position: "fixed", marginLeft: "40%" }}>
+                <label >Cancel Ticket</label>
+                <input type="number" class="form-control" placeholder="Enter Ticket No" onChange={(e) => this.setState({ ticketNo: e.target.value })}/><br/>
                 <Button onClick={()=>{this.cancel()}}>Cancel Ticket</Button>
-                <h1  style={{color: "Purple"}}>{this.state.resAfterReq}</h1>
+               </div>
+               <div>
+                   <br/><br/><br/><br/><br/><br/>
+               <h1  style={{color: "white"}}>{this.state.resAfterReq}</h1>
+               </div>
             </div>
+            
         )
     }
 }
