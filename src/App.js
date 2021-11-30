@@ -10,11 +10,10 @@ import AboutUs from './aboutus';
 import SearchBus from './searchbus';
 import SearchBusList from './searchbuslist';
 import LogOut from './logout';
-//import Reservation from './reservation'; 
 import Payment from './payment';
 import SeatSelect from './selectSeat';
 import background from "./img/bus1.jpg";
-//import DeepLink from './deepLink';
+import Navbar from './SideComponent/NavBar'
 function App() {
   return (
     <div className="App" style={{ 
@@ -22,10 +21,11 @@ function App() {
       backgroundSize: "cover",
           height: "100vh",
     }}>
-    
+
+      
           <Router>
           <Header/>
-
+            <Navbar/>
             <Switch>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/search" component={Search}/>

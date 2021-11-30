@@ -43,7 +43,7 @@ class BusService{
         return axios.post('http://localhost:8765/reservation-service/get-ticket-details',searchTicketDto);
     }
 
-    bookTicket(source,destination,seatNo,doj,busNo,email,password,passengerName,busName){
+    bookTicket(source,destination,seatNo,doj,busNo,email,password,passengerName,busName,pathNo){
         const bookTicketDto = {
             source:source,
             destination:destination,
@@ -53,7 +53,8 @@ class BusService{
             email:email,
             password:password,
             passengerName:passengerName,
-            busName:busName
+            busName:busName,
+            pathNo:pathNo
         }
         console.log(bookTicketDto)
         return axios.post('http://localhost:8765/reservation-service/add/reservation',bookTicketDto);

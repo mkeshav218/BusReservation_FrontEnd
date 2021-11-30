@@ -21,16 +21,22 @@ class Register extends React.Component{
     register(){
         BusService.registerService(this.state.firstName,this.state.lastName,this.state.email,this.state.password,this.state.phone)
         .then(response =>{
-            console.log(response)
-            this.setState({
-                status:response.status,
-                check:"Your registration is successful, You are redirecting to Login...!!"
-            })
-
-            if(this.state.status===200){
+            if(response.status ===200){
+                this.setState({
+                    status:response.status,
+                    check:"Your registration is successful, You are redirecting to Login...!!"
+                    
+                })
                 setTimeout(this.redirectToLogin,2000);
             }
         }) 
+        .catch(err =>{
+            console.log(err)
+            this.setState({
+                check:"User Already Exists...!!"
+                
+            })
+        })
     }
     redirectToLogin(){
         this.props.history.push("/login")
