@@ -9,12 +9,12 @@ class Header extends React.Component{
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                     <div >
-                        <Link to="/">
+                        <Link to="/home">
                         <img src={logo} height={50} width={50} alt=""/>
                         </Link>
                     </div>
                     <ul className="navbar-nav">
-                        <li><Link className="nav-link" to="/" style={{color:"white"}}>Idyllic Travels</Link></li>
+                        <li><Link className="nav-link" to="/home" style={{color:"white"}}>Idyllic Travels</Link></li>
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end" >
                         <li><Link className="nav-link" to="/register" style={{color:"white"}}>Register</Link></li>

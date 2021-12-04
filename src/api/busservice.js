@@ -43,21 +43,44 @@ class BusService{
         return axios.post('http://localhost:8765/reservation-service/get-ticket-details',searchTicketDto);
     }
 
-    bookTicket(source,destination,seatNo,doj,busNo,email,password,passengerName,busName,pathNo){
+    // bookTicket(source,destination,seatNo,doj,busNo,email,password,passengerName,busName,pathNo){
+    //     const bookTicketDto = {
+    //         source:source,
+    //         destination:destination,
+    //         seatNo:seatNo,
+    //         doj:doj,
+    //         busNo:busNo,
+    //         email:email,
+    //         password:password,
+    //         passengerName:passengerName,
+    //         busName:busName,
+    //         pathNo:pathNo
+    //     }
+    //     console.log(bookTicketDto)
+    //     return axios.post('http://localhost:8765/reservation-service/add/reservation',bookTicketDto);
+    // }
+
+    bookTicket(source,destination,doj,busNo,email,password,busName,pathNo,passengerInfos){
         const bookTicketDto = {
             source:source,
             destination:destination,
-            seatNo:seatNo,
             doj:doj,
             busNo:busNo,
             email:email,
             password:password,
-            passengerName:passengerName,
             busName:busName,
-            pathNo:pathNo
+            pathNo:pathNo,
+            passengerInfos:passengerInfos
         }
         console.log(bookTicketDto)
         return axios.post('http://localhost:8765/reservation-service/add/reservation',bookTicketDto);
+    }
+    getAvailableSeats(doj,pathNo){
+        const getAvailableSeatsDto = {
+            doj:doj,
+            pathNo:pathNo
+        }
+        return axios.post('http://localhost:8765/reservation-service/getAvailableSeats',getAvailableSeatsDto);
     }
 
     cancelTicket(ticketNo,email,password){

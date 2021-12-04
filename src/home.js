@@ -1,17 +1,14 @@
 import React from 'react';
 import { DashboardLayout } from './SideComponent/DashBoardLayOut';
+class Home extends React.Component {
 
-class AboutUs extends React.Component {
     render() {
+
         return (
             <DashboardLayout>
-                <div>
-                    <h1 style={{ color: "white" }}>AboutUs Component</h1>
-                </div>
+                <h1>Home Page</h1>
             </DashboardLayout>
-
         )
     }
 }
-
-export default AboutUs;
+export default Home;

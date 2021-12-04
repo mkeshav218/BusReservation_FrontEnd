@@ -3,10 +3,7 @@ import React from 'react';
 import AuthenticationService from './authenticationservice';
 import BusService from './api/busservice';
 import './searchTICKET.css'
-//import background from "./img/bus1.jpg";
 
-//import { useHistory } from "react-router-dom";
-//import { useHistory } from 'react-router';
 
 class Login extends React.Component {
     constructor() {
@@ -45,7 +42,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <div class="form-group" style={{ backgroundColor: "white", paddingLeft: "40px",paddingBlockEnd:"10px", paddingRight: "40px", position: "fixed", marginLeft: "40%" }}>
+                <div class="form-group" style={{ backgroundColor: "white", paddingLeft: "40px", paddingBlockEnd: "10px", paddingRight: "40px", position: "fixed", marginLeft: "40%" }}>
                     <label >Email Id </label>
                     <input type="text" class="form-control" placeholder="Enter email-id" onChange={(e) => this.setState({ username: e.target.value })} />
                     <label >Password</label>
@@ -53,11 +50,10 @@ class Login extends React.Component {
                     <Button onClick={() => { this.signin() }}>Login</Button>
                 </div>
                 <div class="form-group">
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br />
                     <h3 style={{ color: "white" }}>{this.state.check}</h3>
                 </div>
             </div>
-
         )
     }
 }

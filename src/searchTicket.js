@@ -58,7 +58,7 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <div class="form-group" style={{ backgroundColor: "white", paddingLeft: "40px", paddingRight: "40px",paddingBlockEnd:"10px", position: "fixed", marginLeft: "40%" }}>
+                <div class="form-group" style={{ backgroundColor: "white", paddingLeft: "40px", paddingRight: "40px", paddingBlockEnd: "10px", position: "fixed", marginLeft: "40%" }}>
                     <label >Search Ticket</label>
                     <input type="number" class="form-control" placeholder="Enter Ticket No" onChange={(e) => this.setState({ ticketNo: e.target.value })} /><br />
                     <Button onClick={() => { this.searchTicket() }}>Search</Button>
@@ -87,6 +87,7 @@ class Search extends React.Component {
                     }
                 </div>
             </div>
+
 
 
         )

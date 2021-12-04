@@ -83,6 +83,7 @@ class SearchBusList extends React.Component {
 
             </div>
 
+
         )
     }
 }

@@ -13,11 +13,11 @@ import LogOut from './logout';
 import Payment from './payment';
 import SeatSelect from './selectSeat';
 import background from "./img/sky.jpg";
-import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import * as FAicons from "react-icons/fa";
+import Home from './home'
+// import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+// import * as FAicons from "react-icons/fa";
 import 'react-pro-sidebar/dist/css/styles.css';
-import { Link } from 'react-router-dom';
-import SideBar from './SideComponent/SideMenuData'
+// import { Link } from 'react-router-dom';
 function App() {
   return (
     <div className="App" style={{
@@ -33,6 +33,7 @@ function App() {
         {/* <SideBar/> */}
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/searchbus" component={SearchBus} />
           <Route exact path="/searchbuslist" component={SearchBusList} />
@@ -50,7 +51,14 @@ function App() {
               <MenuItem>Search Ticket <Link to="/search"/></MenuItem>
             </SubMenu>
           </Menu>
-        </ProSidebar>; */}
+
+          <Menu iconShape="square">
+            <SubMenu  title="DashBoard" icon={<FAicons.FaHeart />}>
+              <MenuItem >searchbus <Link to="/searchbus"/></MenuItem>
+              <MenuItem>aboutus <Link to="/aboutus"/></MenuItem>
+            </SubMenu>
+          </Menu>
+        </ProSidebar>; */} 
         <Footer />
       </Router>
 
