@@ -13,7 +13,9 @@ import LogOut from './logout';
 import Payment from './payment';
 import SeatSelect from './selectSeat';
 import background from "./img/sky.jpg";
-import Home from './home'
+import Home from './home';
+import MyProfile from './UserDashBoard/myProfile';
+import MyOrder from './UserDashBoard/myOrder';
 // import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 // import * as FAicons from "react-icons/fa";
 import 'react-pro-sidebar/dist/css/styles.css';
@@ -43,6 +45,8 @@ function App() {
           <Route exact path="/logout" component={LogOut} />
           <Route exact path="/payment" component={Payment} />
           <Route exact path="/seatselect" component={SeatSelect} />
+          <Route exact path="/myProfile" component={MyProfile}/>
+          <Route exact path="/myOrder" component={MyOrder}/>
         </Switch>
         {/* <ProSidebar>
           <Menu iconShape="square">

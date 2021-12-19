@@ -21,6 +21,54 @@ class BusService{
         return axios.post('http://localhost:8765/registration-service/addregistration',registerDto);
     }
 
+    getUserDetails(userName,password){
+        const userDto = {
+            userName:userName,
+            password:password
+        }
+
+        return axios.post('http://localhost:8765/registration-service/getRegisteredUser',userDto);
+    }
+
+    updateDob(userName,password,dob){
+        const userDto = {
+            userName:userName,
+            password:password,
+            dob:dob
+        }
+
+        return axios.post('http://localhost:8765/registration-service/update/dob',userDto);
+    }
+
+    updateGender(userName,password,gender){
+        const userDto = {
+            userName:userName,
+            password:password,
+            gender:gender
+        }
+
+        return axios.post('http://localhost:8765/registration-service/update/gender',userDto);
+    }
+
+    updateWallet(userName,password,amount){
+        const userDto = {
+            userName:userName,
+            password:password,
+            amount:amount
+        }
+
+        return axios.post('http://localhost:8765/registration-service/add',userDto);
+    }
+
+    getAllBookings(userName,password){
+        const userDto = {
+            userName:userName,
+            password:password
+        }
+
+        return axios.post('http://localhost:8765/reservation-service/getAllReservation',userDto);
+    }
+
     searchBusService(src,dest,fromTime,toTime,typeOfUser){
         const searchBusDto = {
             src:src,

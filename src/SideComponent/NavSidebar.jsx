@@ -91,6 +91,16 @@ export const NavSidebar = () => {
                   elemBefore: () => <Icon name="coffee" />
                 }
               ]
+            },
+            {
+              title: "My-Profile",
+              itemId: "/myProfile",
+              elemBefore: () => <Icon name="coffee" />
+            },
+            {
+              title: "Your Orders",
+              itemId: "/myOrder",
+              elemBefore: () => <Icon name="coffee" />
             }
           ]}
         />
